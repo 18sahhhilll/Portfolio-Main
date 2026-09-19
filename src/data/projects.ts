@@ -18,7 +18,7 @@ export const projects: Project[] = [
       "A full-stack MERN platform where developers create profiles, post project ideas, and get matched with teammates by skill. Built a scalable MongoDB schema and RESTful API for user and workspace management, JWT authentication, real-time chat with Socket.io, and a reusable React component architecture.",
     tech: ["React", "Node.js", "Express.js", "MongoDB", "Socket.io", "Tailwind CSS"],
     github: "https://github.com/18sahhhilll/DevCollab",
-    demo: "https://dev-collab-nine.vercel.app/",
+    demo: "https://developer-collaboration-hub.vercel.app/",
     featured: true,
   },
   {
