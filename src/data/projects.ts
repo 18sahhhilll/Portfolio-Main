@@ -16,14 +16,14 @@ export const projects: Project[] = [
     summary:
       "Community-powered emergency EV charging discovery platform connecting drivers to verified private hosts.",
     description:
-      "A full-stack emergency EV charging discovery and booking platform connecting stranded EV drivers with verified private hosts in Pune. Features Haversine geospatial radius search, reachability triage, a transactional booking state machine with concurrency locking, confidential address gating, and interactive OpenAPI documentation. Monorepo architecture supporting both a React web portal and an Expo React Native mobile client.",
+      "Full-stack emergency EV charging discovery platform for India featuring a Django REST Framework API, JWT auth, role-based permissions, and PostGIS geospatial nearby search. Implemented a transactional booking state machine with atomic row locks to prevent double-booking and privacy-gated address reveals; shipped both React web and React Native mobile clients.",
     tech: [
-      "Python",
       "Django REST Framework",
+      "PostgreSQL (PostGIS)",
       "React",
       "React Native",
+      "Python",
       "TypeScript",
-      "PostgreSQL",
       "Tailwind CSS",
       "Expo",
     ],
@@ -35,14 +35,24 @@ export const projects: Project[] = [
     title: "DevCollab Hub",
     summary: "A collaboration platform for developers to find teammates by skill and ship together.",
     description:
-      "A full-stack MERN platform where developers create profiles, post project ideas, and get matched with teammates by skill. Built a scalable MongoDB schema and RESTful API for user and workspace management, JWT authentication, real-time chat with Socket.io, and a reusable React component architecture.",
-    tech: ["React", "Node.js", "Express.js", "MongoDB", "Socket.io", "Tailwind CSS"],
+      "Architected a full-stack MERN collaboration platform with a scalable MongoDB schema and RESTful APIs. Implemented JWT authentication and real-time communication with Socket.io, along with reusable React components and an intuitive workspace management interface.",
+    tech: ["MongoDB", "Express.js", "React", "Node.js", "Socket.io", "Tailwind CSS"],
     github: "https://github.com/18sahhhilll/DevCollab",
     demo: "https://developer-collaboration-hub.vercel.app/",
     featured: true,
   },
   {
     id: 3,
+    title: "Brain Bazaar",
+    summary: "An AI-assisted study platform — 1st prize at MAHA-VEER, runner-up at PRO-JIT.",
+    description:
+      "Developed an AI-assisted study platform that auto-generates MCQ tests and study summaries from uploaded content. Implemented backend text processing in Python with an interactive jQuery-based frontend. Won 1st prize at MAHA-VEER and 2nd prize at PRO-JIT.",
+    tech: ["Python", "jQuery", "HTML/CSS"],
+    github: "https://github.com/SturdyKnight/brainbazaar",
+    featured: true,
+  },
+  {
+    id: 4,
     title: "Password Strength Analyzer",
     summary: "A privacy-first password auditing tool that runs entirely client-side.",
     description:
@@ -52,23 +62,14 @@ export const projects: Project[] = [
     demo: "https://password-strength-analyzer-main.vercel.app/",
   },
   {
-    id: 4,
+    id: 5,
     title: "Habit Tracker App",
     summary: "A habit tracker built for a college project brief, with live sync via Supabase.",
     description:
-      "A habit-tracking application built for a project-based learning brief, using Supabase for authentication and real-time PostgreSQL sync. Visualizes daily progress across good and bad habits with dynamic charts and a responsive UI.",
+      "Developed a secure full-stack habit tracking application using Supabase Authentication and real-time PostgreSQL synchronization. Built reusable TypeScript React components with optimized state management and interactive progress tracking.",
     tech: ["React", "TypeScript", "Supabase", "Tailwind CSS"],
     github: "https://github.com/18sahhhilll/RoutineX-Main",
     demo: "https://routine-x-main.vercel.app/",
-  },
-  {
-    id: 5,
-    title: "Brain Bazaar",
-    summary: "An AI-assisted study platform — 1st prize at MAHA-VEER, runner-up at PRO-JIT.",
-    description:
-      "A study assistant that generates MCQ tests and summaries from uploaded material, plus syllabus-management tools. Backend text processing in Python with an interactive jQuery frontend. Won 1st prize at MAHA-VEER and was runner-up at PRO-JIT.",
-    tech: ["Python", "jQuery"],
-    github: "https://github.com/SturdyKnight/brainbazaar",
   },
   {
     id: 6,
