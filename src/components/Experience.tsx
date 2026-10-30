@@ -7,24 +7,18 @@ import { achievements } from "../data/achievements";
 
 export default function Experience() {
   const work = experience.filter((e) => e.type === "work");
-  const education = experience.filter((e) => e.type === "education");
 
   return (
     <Section id="experience">
       <Container>
-        <SectionHeading title="Experience & education" />
+        <SectionHeading
+          title="Experience"
+          subtitle="Internships, industry training, and engineering roles."
+        />
 
         <div className="max-w-2xl">
-          <h3 className="mb-6 font-mono text-xs uppercase tracking-wide text-ink-faint">Experience</h3>
           <div>
             {work.map((entry) => (
-              <TimelineEntry key={entry.id} entry={entry} />
-            ))}
-          </div>
-
-          <h3 className="mb-6 mt-14 font-mono text-xs uppercase tracking-wide text-ink-faint">Education</h3>
-          <div>
-            {education.map((entry) => (
               <TimelineEntry key={entry.id} entry={entry} />
             ))}
           </div>
