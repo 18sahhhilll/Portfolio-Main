@@ -12,6 +12,26 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
+    title: "ChargeNearby ⚡",
+    summary:
+      "Community-powered emergency EV charging discovery platform connecting drivers to verified private hosts.",
+    description:
+      "A full-stack emergency EV charging discovery and booking platform connecting stranded EV drivers with verified private hosts in Pune. Features Haversine geospatial radius search, reachability triage, a transactional booking state machine with concurrency locking, confidential address gating, and interactive OpenAPI documentation. Monorepo architecture supporting both a React web portal and an Expo React Native mobile client.",
+    tech: [
+      "Python",
+      "Django REST Framework",
+      "React",
+      "React Native",
+      "TypeScript",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Expo",
+    ],
+    github: "https://github.com/18sahhhilll/Charge-Nearby",
+    featured: true,
+  },
+  {
+    id: 2,
     title: "DevCollab Hub",
     summary: "A collaboration platform for developers to find teammates by skill and ship together.",
     description:
@@ -22,7 +42,7 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 2,
+    id: 3,
     title: "Password Strength Analyzer",
     summary: "A privacy-first password auditing tool that runs entirely client-side.",
     description:
@@ -32,7 +52,7 @@ export const projects: Project[] = [
     demo: "https://password-strength-analyzer-main.vercel.app/",
   },
   {
-    id: 3,
+    id: 4,
     title: "Habit Tracker App",
     summary: "A habit tracker built for a college project brief, with live sync via Supabase.",
     description:
@@ -42,7 +62,7 @@ export const projects: Project[] = [
     demo: "https://routine-x-main.vercel.app/",
   },
   {
-    id: 4,
+    id: 5,
     title: "Brain Bazaar",
     summary: "An AI-assisted study platform — 1st prize at MAHA-VEER, runner-up at PRO-JIT.",
     description:
@@ -51,7 +71,7 @@ export const projects: Project[] = [
     github: "https://github.com/SturdyKnight/brainbazaar",
   },
   {
-    id: 5,
+    id: 6,
     title: "Pizza Delivery Web App",
     summary: "A full-stack ordering system with auth, cart logic, and live pricing.",
     description:
