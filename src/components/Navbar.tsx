@@ -5,10 +5,11 @@ import { personal } from "../data/personal";
 
 const navItems = [
   { id: "about", label: "About" },
+  { id: "education", label: "Education" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
-  { id: "education", label: "Education" },
+  { id: "achievements", label: "Achievements" },
   { id: "contact", label: "Contact" },
 ];
 
