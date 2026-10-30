@@ -12,7 +12,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "ChargeNearby ⚡",
+    title: "ChargeNearby",
     summary:
       "Community-powered emergency EV charging discovery platform connecting drivers to verified private hosts.",
     description:
