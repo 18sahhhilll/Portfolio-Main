@@ -49,7 +49,7 @@ export default function Navbar() {
             onClick={() => scrollTo("top")}
             className="font-serif text-lg text-ink hover:text-pine transition-colors"
           >
-            Sahil Sangle
+            {personal.name}
           </button>
 
           <ul className="hidden md:flex items-center gap-8">
