@@ -1,4 +1,5 @@
-import { ArrowUpRight, Github } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight, Github, ChevronDown } from "lucide-react";
 import Tag from "./Tag";
 import type { Project } from "../../data/projects";
 
@@ -6,6 +7,8 @@ const linkStyles =
   "inline-flex items-center gap-1 text-ink-soft transition-colors hover:text-pine";
 
 export default function ProjectRow({ project }: { project: Project }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <article
       className="group -ml-4 border-b border-l-2 border-l-transparent border-line py-6 pl-4 transition-colors
@@ -14,11 +17,69 @@ export default function ProjectRow({ project }: { project: Project }) {
     >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
         <div className="flex-1">
-          <h3 className="font-serif text-xl text-ink transition-colors group-hover:text-pine">
-            {project.title}
-          </h3>
+          <div className="flex items-baseline gap-3">
+            <h3
+              onClick={() => setIsExpanded((prev) => !prev)}
+              className="font-serif text-xl text-ink transition-colors group-hover:text-pine cursor-pointer select-none"
+            >
+              {project.title}
+            </h3>
+            {project.featured && (
+              <span className="font-mono text-[10px] uppercase tracking-wider text-pine-dim font-medium">
+                Featured
+              </span>
+            )}
+          </div>
+
           <p className="mt-1.5 max-w-prose leading-relaxed text-ink-soft">{project.description}</p>
-          <div className="mt-3 flex flex-wrap gap-2">
+
+          {project.breakdown && (
+            <div className="mt-3">
+              <button
+                type="button"
+                onClick={() => setIsExpanded((prev) => !prev)}
+                className="inline-flex items-center gap-1.5 font-mono text-xs text-ink-faint transition-colors hover:text-pine focus:outline-none"
+                aria-expanded={isExpanded}
+              >
+                <span>{isExpanded ? "Hide technical deep dive" : "View technical deep dive"}</span>
+                <ChevronDown
+                  size={13}
+                  className={`transition-transform duration-200 ${isExpanded ? "rotate-180" : ""}`}
+                />
+              </button>
+
+              {isExpanded && (
+                <div className="mt-3 space-y-2.5 rounded-md border border-line bg-paper-alt/70 p-3.5 text-xs sm:text-sm">
+                  <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-2">
+                    <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pine shrink-0">
+                      Problem:
+                    </span>
+                    <span className="text-ink-soft leading-relaxed">
+                      {project.breakdown.problem}
+                    </span>
+                  </div>
+                  <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-2">
+                    <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pine shrink-0">
+                      Approach:
+                    </span>
+                    <span className="text-ink-soft leading-relaxed">
+                      {project.breakdown.approach}
+                    </span>
+                  </div>
+                  <div className="flex flex-col gap-0.5 sm:flex-row sm:gap-2">
+                    <span className="font-mono text-xs font-semibold uppercase tracking-wider text-rust shrink-0">
+                      Challenge Solved:
+                    </span>
+                    <span className="text-ink font-medium leading-relaxed">
+                      {project.breakdown.challenge}
+                    </span>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          <div className="mt-3.5 flex flex-wrap gap-2">
             {project.tech.map((t) => (
               <Tag key={t}>{t}</Tag>
             ))}
@@ -27,12 +88,24 @@ export default function ProjectRow({ project }: { project: Project }) {
 
         <div className="flex shrink-0 gap-4 font-mono text-xs sm:pt-1">
           {project.github && (
-            <a href={project.github} target="_blank" rel="noopener noreferrer" className={linkStyles}>
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkStyles}
+              onClick={(e) => e.stopPropagation()}
+            >
               <Github size={13} /> source
             </a>
           )}
           {project.demo && (
-            <a href={project.demo} target="_blank" rel="noopener noreferrer" className={linkStyles}>
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkStyles}
+              onClick={(e) => e.stopPropagation()}
+            >
               live <ArrowUpRight size={13} />
             </a>
           )}
